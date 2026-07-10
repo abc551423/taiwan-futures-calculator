@@ -12,7 +12,7 @@ import { products, type ProductKey } from "../data/products";
 export default function Home() {
   const [product, setProduct] = useState<ProductKey>("mini");
   //進場價格
-  const [price, setPrice] = useState("22500");
+  const [price, setPrice] = useState("40000");
   //交易口數
   const [lots, setLots] = useState("1");
   //預設做多
