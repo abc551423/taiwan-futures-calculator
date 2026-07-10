@@ -105,24 +105,36 @@ const results = changes.map((change) => ({
 
 
   return (
-    <main className="min-h-screen bg-zinc-200 flex flex-col items-center p-8">
+    <main className="min-h-screen bg-slate-100 flex flex-col items-center p-8">
 
-      <h1 className="text-4xl font-bold mt-10">
-            台灣期貨當沖損益計算機
-      </h1>
+      <div className="text-center mb-10">
 
-      <p className="mt-3 text-sm text-slate-600 sm:text-base">
-        支援大台、小台與微台，即時計算期交稅、淨收益與保證金收益率
-      </p>
+        <h1 className="text-4xl font-extrabold text-slate-900">
+              台灣期貨當沖損益計算機
+        </h1>
 
-      <p className="mt-3 text-zinc-600">
-       {product === "big"
-           ? "大台指每點 200 元"
-           : product === "mini"
-            ? "小台指每點 50 元"
-            : "微台指每點 10 元"}
+        <p className="mt-3 text-slate-500 text-lg">
+          支援大台、小台與微台，即時計算期交稅、淨收益與保證金收益率
         </p>
-        
+
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+
+          <span className="rounded-full bg-slate-200 px-4 py-2 text-sm font-medium text-slate-700">
+            📈 大台／小台／微台
+          </span>
+
+          <span className="rounded-full bg-slate-200 px-4 py-2 text-sm font-medium text-slate-700">
+            ⚡ 即時計算
+          </span>
+
+          <span className="rounded-full bg-slate-200 px-4 py-2 text-sm font-medium text-slate-700">
+            💰 收益率分析
+          </span>
+
+        </div>
+
+      </div>
+
         <div className="mt-8 w-full max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <TradeSettingCard

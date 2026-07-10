@@ -21,7 +21,7 @@ export default function TradeInfoCard({
   margin,
 }: TradeInfoCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow p-6">
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       <h2 className="text-xl font-bold text-slate-900">
         本次交易設定
       </h2>
