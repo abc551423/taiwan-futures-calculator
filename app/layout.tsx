@@ -12,19 +12,53 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import type { Metadata } from "next";
+
 export const metadata: Metadata = {
-  title: "台灣期貨當沖損益計算機｜大台、小台、微台",
+  title: "台灣期貨當沖損益計算機｜免費大台、小台、微台損益試算",
+
   description:
-    "免費台灣期貨當沖損益計算工具，支援大台、小台、微台，快速計算期交稅、淨收益、保證金與收益率。",
+    "免費台灣期貨當沖損益計算工具，支援大台、小台、微台，快速計算淨收益、收益率、期交稅與保證金。",
+
   keywords: [
-    "期貨損益計算機",
-    "台指期計算機",
-    "小台損益計算",
-    "微台損益計算",
+    "台灣期貨",
+    "期貨計算機",
+    "台指期",
+    "小台",
+    "微台",
     "期貨當沖",
+    "損益計算",
+    "收益率",
     "期交稅",
-    "保證金收益率",
+    "保證金",
   ],
+
+  authors: [
+    {
+      name: "DickChen",
+    },
+  ],
+
+  creator: "DickChen",
+
+  metadataBase: new URL(
+    "https://taiwan-futures-calculator.vercel.app"
+  ),
+
+  openGraph: {
+    title: "台灣期貨當沖損益計算機",
+    description:
+      "免費計算大台、小台、微台期貨淨收益、收益率與期交稅。",
+    url: "https://taiwan-futures-calculator.vercel.app",
+    siteName: "台灣期貨當沖損益計算機",
+    locale: "zh_TW",
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
