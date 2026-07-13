@@ -29,10 +29,27 @@ export default function Home() {
     useState<"normal" | "daytrade">("daytrade");
 
 
-const priceValue = Number(price) || 0;
-const lotsValue = Number(lots) || 1;
-const rangeValue = Number(range) || 0;
-const stepValue = Number(step) || 20;
+const priceValue = Number(price);
+const lotsValue = Number(lots);
+const rangeValue = Number(range);
+const stepValue = Number(step);
+
+const isValidInput =
+  price !== "" &&
+  lots !== "" &&
+  range !== "" &&
+  step !== "" &&
+  priceValue > 0 &&
+  lotsValue > 0 &&
+  rangeValue > 0 &&
+  stepValue > 0;
+
+const estimatedRows =
+  isValidInput ? Math.floor((rangeValue * 2) / stepValue) + 1 : 0;
+
+const canGenerateTable =
+  isValidInput && estimatedRows <= 1000;
+
 const currentProduct = products[product];
   
 const pointValue = currentProduct.pointValue;
@@ -105,15 +122,15 @@ const results = changes.map((change) => ({
 
 
   return (
-    <main className="min-h-screen bg-slate-100 flex flex-col items-center p-8">
+    <main className="min-h-screen bg-slate-100 flex flex-col items-center px-4 py-8 sm:p-8">
 
       <div className="text-center mb-10">
 
-        <h1 className="text-4xl font-extrabold text-slate-900">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
               台灣期貨當沖損益計算機
         </h1>
 
-        <p className="mt-3 text-slate-500 text-lg">
+        <p className="mt-3 text-slate-500 text-base sm:text-lg">
           支援大台、小台與微台，即時計算期交稅、淨收益與保證金收益率
         </p>
 
@@ -166,9 +183,32 @@ const results = changes.map((change) => ({
             />
           </div>
         
-          <ProfitTable results={results} />
+          <div className="mt-8">
+            {!isValidInput ? (
+              <p className="text-center text-slate-500">
+                請完整輸入交易條件
+              </p>
+            ) : !canGenerateTable ? (
+              <p className="text-center text-red-600">
+                顯示資料過多，請縮小範圍或增加間隔
+              </p>
+            ) : (
+              <ProfitTable results={results} />
+            )}
+          </div>
 
       </div>
+
+      <footer className="mt-10 w-full max-w-6xl border-t border-slate-200 pt-6 text-sm text-slate-500">
+        <p>
+          本工具僅供試算與資訊參考，不構成任何投資建議。
+          實際交易成本、保證金與稅費，請以期交所及券商公告為準。
+        </p>
+
+        <p className="mt-2">
+          保證金資料更新日期：2026 年 7 月
+        </p>
+      </footer>
     </main>
   );
 }
