@@ -67,13 +67,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="zh-TW"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {children}
 
-        <GoogleAnalytics gaId="G-8ENHTBBVN0" />
+        <GoogleAnalytics gaId="G-1NYDC17JXC" />
       </body>
     </html>
   );
