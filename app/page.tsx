@@ -1,8 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import {
   BarChart3,
+  BookOpen,
   Calculator,
   CircleDollarSign,
   Gauge,
@@ -337,11 +339,29 @@ export default function Home() {
                 text="保證金收益率"
               />
             </div>
+            <div className="mt-7 flex flex-wrap justify-center gap-3">
+              <a
+                href="#calculator"
+                className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800"
+              >
+                開始試算
+              </a>
+
+              <Link
+                href="/articles"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50"
+              >
+                <BookOpen className="h-4 w-4" />
+                期貨新手教學
+              </Link>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+      <div 
+      id="calculator"
+      className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         {/* 主要操作區 */}
         <section
           aria-label="期貨損益試算設定"
