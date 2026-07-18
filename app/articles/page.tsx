@@ -6,6 +6,7 @@ import {
   CalendarDays,
   Clock3,
 } from "lucide-react";
+import { getAllArticles } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "期貨新手教學｜Vertex Academy",
@@ -13,19 +14,9 @@ export const metadata: Metadata = {
     "從零開始學習台灣期貨，了解期貨原理、大台小台微台、保證金、手續費、期交稅與損益計算。",
 };
 
-const articles = [
-  {
-    slug: "what-is-futures",
-    category: "期貨入門",
-    title: "什麼是期貨？新手 10 分鐘快速了解期貨交易",
-    description:
-      "從做多、做空、保證金與槓桿開始，快速理解期貨的基本運作方式。",
-    date: "2026 年 7 月",
-    readingTime: "約 8 分鐘",
-  },
-];
-
 export default function ArticlesPage() {
+  const articles = getAllArticles();
+
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       <section className="border-b border-slate-200 bg-white">
@@ -50,8 +41,13 @@ export default function ArticlesPage() {
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-7">
-          <p className="text-sm font-semibold text-blue-600">LESSON 01</p>
-          <h2 className="mt-1 text-2xl font-bold">期貨入門</h2>
+          <p className="text-sm font-semibold text-blue-600">
+            VERTEX LESSONS
+          </p>
+
+          <h2 className="mt-1 text-2xl font-bold">
+            期貨入門
+          </h2>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -61,9 +57,15 @@ export default function ArticlesPage() {
               href={`/articles/${article.slug}`}
               className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg"
             >
-              <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
-                {article.category}
-              </span>
+              <div className="flex items-center justify-between gap-4">
+                <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+                  Lesson {article.lesson}
+                </span>
+
+                <span className="text-sm text-slate-500">
+                  約 {article.readingTime} 分鐘
+                </span>
+              </div>
 
               <h3 className="mt-5 text-xl font-bold leading-8 group-hover:text-blue-700">
                 {article.title}
@@ -76,12 +78,12 @@ export default function ArticlesPage() {
               <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="flex items-center gap-1.5">
                   <CalendarDays className="h-4 w-4" />
-                  {article.date}
+                  更新：{article.updatedAt}
                 </span>
 
                 <span className="flex items-center gap-1.5">
                   <Clock3 className="h-4 w-4" />
-                  {article.readingTime}
+                  約 {article.readingTime} 分鐘
                 </span>
               </div>
 
