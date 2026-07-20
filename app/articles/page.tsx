@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BackLink from "@/components/navigation/BackLink";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -24,6 +25,12 @@ export default function ArticlesPage() {
           <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white">
             <BookOpen className="h-6 w-6" />
           </div>
+
+          <BackLink
+            href="/"
+            label="返回首頁"
+            className="mb-8"
+          />
 
           <p className="mb-3 text-sm font-semibold tracking-widest text-blue-600">
             VERTEX ACADEMY

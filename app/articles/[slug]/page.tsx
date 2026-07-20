@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import ArticleRenderer from "@/components/article/ArticleRenderer";
+import BackLink from "@/components/navigation/BackLink";
 import {
   getArticleBySlug,
   getArticleSlugs,
@@ -52,9 +53,12 @@ export default async function ArticlePage({
   return (
     <main className="mx-auto max-w-4xl px-6 py-16">
       <header className="mb-12">
-        <p className="text-sm font-medium text-blue-600">
-          Lesson {article.lesson}
-        </p>
+
+        <BackLink
+          href="/articles"
+          label="返回學院"
+          className="mb-8"
+        />
 
         <h1 className="mt-2 text-4xl font-bold tracking-tight text-slate-900">
           {article.title}

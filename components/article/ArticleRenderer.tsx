@@ -1,3 +1,10 @@
+<Link
+  href="/articles"
+  className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-slate-500 transition-colors hover:text-slate-900"
+>
+  <span aria-hidden="true">←</span>
+  返回學院
+</Link>
 import Link from "next/link";
 import {
   ArrowRight,
