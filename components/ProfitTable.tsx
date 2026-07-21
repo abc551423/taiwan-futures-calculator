@@ -32,25 +32,6 @@ export default function ProfitTable({
       ? Math.min(...results.map((r) => r.netProfit))
       : 0;
 
-  const bestResult =
-    results.length > 0
-      ? results.reduce(
-          (best, current) =>
-            current.netProfit > best.netProfit
-              ? current
-              : best
-        )
-      : null;
-
-  const worstResult =
-    results.length > 0
-      ? results.reduce(
-          (worst, current) =>
-            current.netProfit < worst.netProfit
-              ? current
-              : worst
-        )
-      : null;
   return (
     <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">
 

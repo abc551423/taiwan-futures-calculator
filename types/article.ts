@@ -32,6 +32,7 @@ export interface HeroSection {
   type: "hero";
   eyebrow?: string;
   title: string;
+  subtitle?: string;
   description?: string;
   align?: "left" | "center";
 }
@@ -75,7 +76,7 @@ export interface ComparisonSection {
     subtitle?: string;
     description: string;
     tone?: SectionTone;
-    icon?: SectionIcon;
+    icon?: string;
     items?: string[];
   }[];
 }
@@ -146,7 +147,7 @@ export interface InfoCardSection {
   title: string;
   content: string;
   tone?: SectionTone;
-  icon?: SectionIcon;
+  icon?: string;
 }
 
 export interface StatsSection {

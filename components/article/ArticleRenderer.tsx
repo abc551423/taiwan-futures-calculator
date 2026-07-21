@@ -608,7 +608,7 @@ function InfoCard({
 function SectionIconRenderer({
   icon,
 }: {
-  icon: SectionIcon;
+  icon: SectionIcon | string;
 }) {
   const iconClassName = "h-6 w-6";
 
@@ -629,8 +629,17 @@ function SectionIconRenderer({
       return <BookOpen className={iconClassName} />;
 
     case "info":
-    default:
       return <Info className={iconClassName} />;
+
+    default:
+      return (
+        <span
+          className="flex h-6 w-6 items-center justify-center text-lg leading-none"
+          aria-hidden="true"
+        >
+          {icon}
+        </span>
+      );
   }
 }
 
