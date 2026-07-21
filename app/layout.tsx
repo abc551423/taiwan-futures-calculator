@@ -71,18 +71,20 @@ export default function RootLayout({
       lang="zh-TW"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <Script
+          id="adsense"
+          async
+          strategy="beforeInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5460769982666546"
+          crossOrigin="anonymous"
+        />
+      </head>
+
       <body className="min-h-full flex flex-col">
         {children}
 
         <GoogleAnalytics gaId="G-1NYDC17JXC" />
-
-        <Script
-          id="adsense"
-          async
-          strategy="afterInteractive"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5460769982666546"
-          crossOrigin="anonymous"
-        />
       </body>
     </html>
   );
