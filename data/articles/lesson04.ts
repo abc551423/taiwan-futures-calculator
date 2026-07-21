@@ -6,7 +6,7 @@ export const lesson04: Article = {
   title: "台指期結算日完整解析｜第三個星期三會發生什麼事？",
   description:
     "了解台指期、小台與微台的結算日規則、最後交易日、最後結算價，以及持倉到期時會發生什麼事。",
-  readingTime: "6 分鐘",
+  readingTime: 6,
   updatedAt: "2026-07-22",
   keywords: [
     "台指期結算日",
@@ -305,5 +305,4 @@ export const lesson04: Article = {
     },
   ],
 };
-
 export default lesson04;
