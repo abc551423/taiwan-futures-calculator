@@ -680,6 +680,7 @@ export default function Home() {
       <footer className="border-t border-slate-800 bg-slate-950 text-slate-400">
         <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+            {/* 品牌資訊 */}
             <div className="max-w-xl">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-slate-950">
@@ -703,45 +704,57 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm">
+            {/* Footer 導覽 */}
+            <nav
+              aria-label="頁尾導覽"
+              className="grid grid-cols-2 gap-x-12 gap-y-6 sm:grid-cols-3"
+            >
               <div>
-                <p className="font-semibold text-white">
+                <p className="text-sm font-semibold leading-6 text-white">
                   工具
                 </p>
 
                 <a
                   href="#calculator"
-                  className="mt-3 block transition hover:text-white"
+                  className="mt-3 block text-sm leading-6 text-slate-400 transition hover:text-white"
                 >
                   損益計算機
                 </a>
               </div>
 
               <div>
-                <p className="font-semibold text-white">
+                <p className="text-sm font-semibold leading-6 text-white">
                   學習
                 </p>
 
                 <Link
                   href="/articles"
-                  className="mt-3 block transition hover:text-white"
+                  className="mt-3 block text-sm leading-6 text-slate-400 transition hover:text-white"
                 >
                   Vertex Academy
                 </Link>
               </div>
-            </div>
-          </div>
 
+              <div>
+                <p className="text-sm font-semibold leading-6 text-white">
+                  網站
+                </p>
+
+                <Link
+                  href="/privacy"
+                  className="mt-3 block text-sm leading-6 text-slate-400 transition hover:text-white"
+                >
+                  隱私權政策
+                </Link>
+              </div>
+            </nav>
+          </div>
+          {/* 底部資訊 */}
           <div className="mt-9 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              © 2026 Vertex Futures Calculator
-            </p>
+            <p>© 2026 Vertex Futures Calculator</p>
 
             <div className="flex flex-wrap gap-x-5 gap-y-2">
-              <span>
-                保證金資料更新：2026 年 7 月
-              </span>
-
+              <span>保證金資料更新：2026 年 7 月</span>
               <span>Version 1.3.0</span>
             </div>
           </div>
@@ -750,7 +763,6 @@ export default function Home() {
     </main>
   );
 }
-
 type SectionHeadingProps = {
   eyebrow: string;
   title: string;
